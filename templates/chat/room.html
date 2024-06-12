@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block base %}
+    <h2>{{ name }}</h2>
+    <div hx-ext="ws" ws-connect="/chat/{{ slug }}/">
+        <form ws-send>
+            <input name="message">
+        </form>
+    </div>
+    <div id='messages'></div>
+{% endblock %}
